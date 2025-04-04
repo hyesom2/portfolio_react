@@ -29,6 +29,7 @@ body {
   --light-teal: #59adc4;
   --light-yellow: #ffcc00;
   --light-font: #3d3d3d;
+  --light-bg: #8f8f8f;
   --light-inactive: #cecdcd;
   --light-inactive-bg: #f6f6f6;
   --light-inactive-bg-opacity: #f6f6f6;
@@ -106,6 +107,7 @@ body {
   --color-mac_light-teal: var(--light-teal);
   --color-mac_light-yellow: var(--light-yellow);
   --color-mac_light-font: var(--light-font);
+  --color-mac_light-bg: var(--light-bg);
   --color-mac_light-inactive: var(--light-inactive);
   --color-mac_light-inactive-bg: var(--light-inactive-bg);
   --color-mac_light-inactive-bg-opacity: var(--light-inactive-bg-opacity);
