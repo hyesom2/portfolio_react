@@ -19,7 +19,7 @@
   font-display: block;
 }
 
-.icon {
+.mac {
   font-family: 'Mac' !important;
   font-style: normal;
   font-weight: normal;
@@ -58,10 +58,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-logo_light:before {
+/* mac */
+.icon-logo_dark:before {
   content: '\e900';
 }
-.icon-logo_dark:before {
+.icon-logo_light:before {
   content: '\e901';
   color: #fff;
 }
@@ -100,6 +101,8 @@
   content: '\e90b';
   color: #fff;
 }
+
+/* instagram */
 .icon-activity:before {
   content: '\e91f';
 }
