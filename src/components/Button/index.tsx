@@ -23,7 +23,11 @@ function Button({ type, color, className, children, onClick }: ButtonTypes) {
         />
       );
   }
-  return <button className={`${className} cursor-pointer`}>{children}</button>;
+  return (
+    <button className={`${className} cursor-pointer`} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;
