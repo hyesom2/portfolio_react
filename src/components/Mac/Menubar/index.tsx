@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import Icons from '@/components/Icons';
 
 const MENUBAR_MENUS = ['Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help'];
@@ -8,16 +9,21 @@ function Menubar() {
   return (
     <nav
       aria-label="macOS 메뉴바"
-      className="relative flex justify-start items-center w-full h-6 px-3"
+      className="relative flex justify-between md:justify-start items-center w-full h-6 px-3"
     >
-      <div className="bg-blend-color-burn bg-mac_light-bg w-full h-full absolute top-0 left-0 opacity-20"></div>
+      <div className="bg-blend-color-burn bg-mac_light-bg w-full h-full absolute top-0 left-0 opacity-20 -z-10"></div>
       <h1
         className="inline-flex justify-center items-center w-11 h-full mr-0.5"
         aria-label="apple 로고"
       >
-        <Icons type="mac" name="logo_light" />
+        <Button>
+          <Icons type="mac" name="logo_light" />
+        </Button>
       </h1>
-      <ul role="menubar" className="flex justify-start items-center flex-1 gap-0.5 text-white">
+      <ul
+        role="menubar"
+        className="hidden md:flex justify-start items-center flex-1 gap-0.5 text-white"
+      >
         {MENUBAR_MENUS.map((menu, index) => (
           <li role="none" key={index} className="flex justify-center items-center px-2">
             <button type="button" role="menuitem" className="fs-14">
