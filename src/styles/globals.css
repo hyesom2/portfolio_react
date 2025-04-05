@@ -33,6 +33,8 @@ body {
   --light-inactive: #cecdcd;
   --light-inactive-bg: #f6f6f6;
   --light-inactive-bg-opacity: #f6f6f6;
+  --light-border: rgba(0, 0, 0, 0.12);
+  --light-windowFrame-bg: #f6f6f6;
 
   /* dark mode colors */
   --dark-blue: #0a84ff;
@@ -81,6 +83,7 @@ body {
 
   /* font-size */
   --font-size-12: 0.75rem; /* 12px */
+  --font-size-13: 0.8125rem; /* 13px */
   --font-size-14: 0.875rem; /* 14px */
   --font-size-16: 1rem; /* 16px */
   --font-size-18: 1.125rem; /* 18px */
@@ -111,6 +114,8 @@ body {
   --color-mac_light-inactive: var(--light-inactive);
   --color-mac_light-inactive-bg: var(--light-inactive-bg);
   --color-mac_light-inactive-bg-opacity: var(--light-inactive-bg-opacity);
+  --color-mac_light-border: var(--light-border);
+  --color-mac_light-windowFrame-bg: var(--light-windowFrame-bg);
 
   /* dark mode colors */
   --color-mac_dark-blue: var(--dark-blue);
@@ -180,6 +185,9 @@ body {
   /* font-size */
   .fs-12 {
     font-size: var(--font-size-12); /* 12px */
+  }
+  .fs-13 {
+    font-size: var(--font-size-13); /* 13px */
   }
   .fs-14 {
     font-size: var(--font-size-14); /* 14px */
