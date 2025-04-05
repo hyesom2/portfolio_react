@@ -11,6 +11,20 @@ body {
   letter-spacing: -0.005rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 :root {
@@ -69,6 +83,8 @@ body {
   --insta-yellow: #fcb045;
   --insta-overlay: rgba(0, 0, 0, 0.65);
   --insta-badge-blue: rgb(0, 149, 246);
+  --insta-font: #383838;
+  --insta-link: rgba(0, 55, 107, 1);
 
   /* font weight */
   --font-weight-thin: 100;
@@ -150,6 +166,8 @@ body {
   --color-insta_yellow: var(--insta-yellow);
   --color-insta_overlay: var(--insta-overlay);
   --color-insta_badge-blue: var(--insta-badge-blue);
+  --color-insta_font: var(--insta-font);
+  --color-insta_link: var(--insta-link);
 }
 
 @layer utilities {
