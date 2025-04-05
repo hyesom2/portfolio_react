@@ -1,21 +1,20 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import RootLayout from '@/layout/RootLayout';
-import { Instagram, Mac, Profile } from '@/pages';
+import { Instagram, Mac, Profile, WindowFrame } from '@/pages';
 
 export const routes = [
   {
     path: '/',
-    element: <RootLayout />,
+    element: <Mac />,
     children: [
       {
-        index: true,
-        element: <Mac />,
-      },
-      {
         path: 'instagram',
-        element: <Instagram />,
+        element: <WindowFrame />,
         children: [
+          {
+            index: true,
+            element: <Instagram />,
+          },
           {
             path: 'profile',
             element: <Profile />,
