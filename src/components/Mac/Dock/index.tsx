@@ -16,7 +16,11 @@ const DOCK_DATA = [
 function Dock() {
   const navigate = useNavigate();
   const handleAppClick = (title: string) => {
-    navigate(`/${title}`);
+    if (title === 'instagram') {
+      navigate(`/${title}/profile`);
+    } else {
+      navigate(`/${title}`);
+    }
   };
 
   return (
