@@ -17,31 +17,33 @@ function Menubar() {
   return (
     <>
       {isMobile ? (
-        <nav className="flex fixed bottom-0 w-full h-12 items-center justify-between px-8 z-50 bg-white border-t border-insta_button-gray-hover">
+        <nav className="border-insta_button-gray-hover fixed bottom-0 z-50 flex h-12 w-full items-center justify-between border-t bg-white px-8">
           <h1>
             <Link to="/instagram">
-              <Icons type="instagram" name="instagram_logo" className="fs-30" />
+              <Icons type="instagram" name="instagram_logo" className="fs-24" />
             </Link>
           </h1>
           <ul className="flex">
-            <li className="w-full flex justify-start items-center rounded-lg gap-4 group">
+            <li className="group flex w-full items-center justify-start gap-4 rounded-lg">
+              <Icons type="instagram" name="profile" className="fs-24 group-hover:scale-[1.1]" />
               <Link to="/instagram/profile" className="fs-16 group-hover:font-bold">
-                <Icons type="instagram" name="profile" className="fs-24 group-hover:scale-[1.1]" />
                 <span>Profile</span>
               </Link>
             </li>
           </ul>
         </nav>
       ) : (
-        <nav className="flex flex-col gap-7 w-full md:w-60 bg-insta-inactive bg-white border-r border-insta_button-gray-hover pt-10 px-3 pb-4 md:fixed left-0">
+        <nav className="bg-insta-inactive border-insta_button-gray-hover left-0 flex w-full flex-col gap-7 border-r bg-white px-3 pt-10 pb-4 md:fixed md:w-60">
           <h1 className="px-3">
-            <Icons type="instagram" name="instagram_logo" className="fs-30" />
+            <Link to="/instagram">
+              <Icons type="instagram" name="instagram_logo" className="fs-30" />
+            </Link>
           </h1>
           <ul className="flex flex-col items-start">
-            <li className="w-full flex justify-start items-center rounded-lg gap-4 group">
+            <li className="group flex w-full items-center justify-start gap-4 rounded-lg">
               <Icons type="instagram" name="profile" className="fs-24 group-hover:scale-[1.1]" />
               <Link to="/instagram/profile" className="fs-16 group-hover:font-bold">
-                Profile
+                <span>Profile</span>
               </Link>
             </li>
           </ul>
