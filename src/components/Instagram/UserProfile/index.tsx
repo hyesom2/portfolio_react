@@ -4,7 +4,7 @@ function UserProfile() {
   return (
     <>
       <h1 className="sr-only">프로필 이미지</h1>
-      <figure className="from-insta_yellow via-insta_orange to-insta_purple relative inline-block h-28 w-28 overflow-hidden rounded-full bg-gradient-to-r md:h-[10rem] md:w-[10rem]">
+      <figure className="from-insta_yellow via-insta_orange to-insta_purple relative inline-block h-28 w-28 shrink-0 grow-0 overflow-hidden rounded-full bg-gradient-to-r md:h-[10rem] md:w-[10rem]">
         <img
           src={USER.profile_img}
           alt=""
