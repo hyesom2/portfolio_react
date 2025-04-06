@@ -8,8 +8,8 @@ const DOCK_DATA = [
   },
   {
     id: 1,
-    title: 'trash',
-    img_url: '/images/trash_light.webp',
+    title: 'note',
+    img_url: '/images/note_light.webp',
   },
 ];
 
@@ -20,21 +20,21 @@ function Dock() {
   };
 
   return (
-    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-2">
+    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 transform p-2">
       <div
-        className="absolute top-0 left-0 bg-white opacity-20 w-full h-full rounded-xl"
+        className="absolute top-0 left-0 h-full w-full rounded-xl bg-white opacity-20"
         aria-hidden="true"
       ></div>
       <ul className="flex gap-8">
         {DOCK_DATA.map((app) => (
           <li key={app.id}>
             <button
-              className="w-16 h-16 cursor-pointer group"
+              className="group h-16 w-16 cursor-pointer"
               onClick={() => handleAppClick(app.title)}
             >
-              <figure className="flex flex-col relative">
+              <figure className="relative flex flex-col">
                 <img src={app.img_url} alt="" />
-                <figcaption className="whitespace-nowrap absolute -top-1/2 left-1/2 transform -translate-x-1/2 bg-mac_dark-bg rounded-lg p-1 text-mac_dark-font invisible group-hover:visible">
+                <figcaption className="bg-mac_dark-bg text-mac_dark-font invisible absolute -top-1/2 left-1/2 -translate-x-1/2 transform rounded-lg p-1 whitespace-nowrap group-hover:visible">
                   {app.title}
                 </figcaption>
               </figure>
