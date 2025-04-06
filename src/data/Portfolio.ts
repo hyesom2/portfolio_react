@@ -69,7 +69,8 @@ const PORTFOLIO_DATA: portfolioDataTypes[] = [
     contribution: [
       '자주 사용하는 아토믹 컴포넌트 제작',
       '상품 상세페이지 제작',
-      '장바구니 페이지 제작, 페이지 라우팅',
+      '장바구니 페이지 제작 및 기능 구현',
+      '페이지 라우팅',
     ],
     problem: [
       '아이콘 이미지가 개별로 되어있음',
@@ -146,7 +147,11 @@ const PORTFOLIO_DATA: portfolioDataTypes[] = [
     url: '배포예정',
     githubURL: 'https://github.com/polzzak-by-nowashgirls/polzzak',
     skills: ['JavaScript', 'React', 'TypeScript', 'Zustand', 'Shadcn UI', 'Supabase', 'Vite'],
-    contribution: ['프로젝트 초기 세팅', '자주 사용하는 아토믹 컴포넌트 제작'],
+    contribution: [
+      '프로젝트 초기 세팅',
+      '자주 사용하는 아토믹 컴포넌트 제작',
+      '페이지 레이아웃(마이페이지,폴짝,지도,검색/추가/수정)',
+    ],
     problem: [],
     solve: [],
   },
