@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 function RootLayout() {
   return (
-    <section className="relative min-w-screen min-h-screen bg-[url(/images/mac_light.webp)] bg-no-repeat bg-center bg-cover">
+    <section className="relative min-h-screen min-w-screen bg-[url(/images/mac_light.webp)] bg-cover bg-center bg-no-repeat">
       <Outlet />
     </section>
   );
