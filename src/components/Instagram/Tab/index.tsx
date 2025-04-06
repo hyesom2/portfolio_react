@@ -21,18 +21,19 @@ const TAB_LIST = [
 function Tab() {
   return (
     <ul
-      className="w-full min-h-14 flex justify-center items-center gap-16 border-t border-insta_button-gray-hover"
+      className="border-insta_button-gray-hover fs-14 flex min-h-14 w-full items-center justify-center gap-8 border-t md:gap-16"
       role="tablist"
       aria-label="instagram 콘텐츠 탭"
     >
       {TAB_LIST.map((tab) => (
         <li
-          className="flex items-center gap-2 cursor-pointer hover:font-semibold text-insta_gray"
+          className="text-insta_gray flex cursor-pointer items-center gap-2 hover:font-semibold"
           role="tab"
           key={tab.id}
+          tabIndex={0}
         >
           <Icons type="instagram" name={tab.icon_name} />
-          <span className="uppercase fs-14">{tab.name}</span>
+          <span className="uppercase">{tab.name}</span>
         </li>
       ))}
     </ul>
