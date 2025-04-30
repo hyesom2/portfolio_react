@@ -5,12 +5,12 @@ import WindowFrame from '@/layout/WindowFrame';
 
 function Instagram() {
   return (
-    <WindowFrame className="relative flex flex-col h-full md:flex-row">
+    <WindowFrame className="relative flex h-full flex-col md:flex-row">
       <h1 className="sr-only">Instagram</h1>
       <aside className="w-full md:w-60">
         <Menubar />
       </aside>
-      <main className="flex-1 h-full overflow-hidden">
+      <main className="h-full flex-1 overflow-hidden">
         <Outlet />
       </main>
     </WindowFrame>

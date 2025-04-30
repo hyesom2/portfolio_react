@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { RootLayout } from '@/layout';
-import { Instagram, Mac, Modal, Profile } from '@/pages';
+import { Instagram, Mac, Modal, Note, Profile } from '@/pages';
 
 export const routes = [
   {
@@ -27,6 +27,10 @@ export const routes = [
                 ],
               },
             ],
+          },
+          {
+            path: 'Note',
+            element: <Note />,
           },
         ],
       },
