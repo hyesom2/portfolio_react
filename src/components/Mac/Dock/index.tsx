@@ -1,22 +1,27 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { useModeStore } from '@/store/useModeStore';
 
 const DOCK_DATA = [
   {
     id: 0,
     title: 'instagram',
-    img_url: '/images/instagram_logo.webp',
+    img_light_url: '/images/instagram_logo.webp',
+    img_dark_url: '/images/instagram_logo.webp',
   },
   {
     id: 1,
     title: 'note',
-    img_url: '/images/note_light.webp',
+    img_light_url: '/images/note_light.webp',
+    img_dark_url: '/images/note_dark.webp',
   },
 ];
 
 function Dock() {
   const navigate = useNavigate();
+  const { mode } = useModeStore();
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   const handleAppClick = (title: string) => {
@@ -46,7 +51,11 @@ function Dock() {
               onMouseLeave={() => handleHoverIndex(null)}
             >
               <figure className="relative flex flex-col">
-                <img src={app.img_url} alt="" className="h-full" />
+                <img
+                  src={mode === 'dark' ? app.img_dark_url : app.img_light_url}
+                  alt=""
+                  className="h-full"
+                />
                 {hoverIndex === app.id && (
                   <motion.figcaption
                     initial={{ opacity: 0, y: 10 }}
