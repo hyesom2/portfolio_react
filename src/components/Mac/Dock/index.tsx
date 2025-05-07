@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const DOCK_DATA = [
@@ -15,12 +17,17 @@ const DOCK_DATA = [
 
 function Dock() {
   const navigate = useNavigate();
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
   const handleAppClick = (title: string) => {
     if (title === 'instagram') {
       navigate(`/${title}/profile`);
     } else {
       navigate(`/${title}`);
     }
+  };
+  const handleHoverIndex = (index: number | null) => {
+    setHoverIndex(index);
   };
 
   return (
@@ -29,18 +36,28 @@ function Dock() {
         className="absolute top-0 left-0 h-full w-full rounded-xl bg-white opacity-20"
         aria-hidden="true"
       ></div>
-      <ul className="flex gap-8">
+      <ul className="flex items-center gap-8">
         {DOCK_DATA.map((app) => (
-          <li key={app.id}>
+          <li key={app.id} className="flex items-center justify-center">
             <button
               className="group h-16 w-16 cursor-pointer"
               onClick={() => handleAppClick(app.title)}
+              onMouseEnter={() => handleHoverIndex(app.id)}
+              onMouseLeave={() => handleHoverIndex(null)}
             >
               <figure className="relative flex flex-col">
-                <img src={app.img_url} alt="" />
-                <figcaption className="bg-mac_dark-bg text-mac_dark-font invisible absolute -top-1/2 left-1/2 -translate-x-1/2 transform rounded-lg p-1 whitespace-nowrap group-hover:visible">
-                  {app.title}
-                </figcaption>
+                <img src={app.img_url} alt="" className="h-full" />
+                {hoverIndex === app.id && (
+                  <motion.figcaption
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: -10 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-mac_dark-bg text-mac_dark-font absolute bottom-full left-1/2 -translate-x-1/2 transform rounded-lg px-2 py-1 whitespace-nowrap"
+                  >
+                    {app.title}
+                  </motion.figcaption>
+                )}
               </figure>
             </button>
           </li>
