@@ -38,7 +38,7 @@ function Dock() {
   return (
     <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 transform p-2">
       <div
-        className="absolute top-0 left-0 h-full w-full rounded-xl bg-white opacity-20"
+        className={`absolute top-0 left-0 h-full w-full rounded-xl opacity-20 ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}
         aria-hidden="true"
       ></div>
       <ul className="flex items-center gap-8">

@@ -11,7 +11,9 @@ function RootLayout() {
   }, [mode]);
 
   return (
-    <section className="relative min-h-screen min-w-screen bg-[url(/images/mac_light.webp)] bg-cover bg-center bg-no-repeat">
+    <section
+      className={`relative min-h-screen min-w-screen ${mode === 'dark' ? 'bg-[url(/images/mac_dark.webp)]' : 'bg-[url(/images/mac_light.webp)]'} bg-cover bg-center bg-no-repeat`}
+    >
       <Outlet />
     </section>
   );

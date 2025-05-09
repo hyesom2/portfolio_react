@@ -33,7 +33,9 @@ function Menubar() {
       aria-label="macOS 메뉴바"
       className="relative flex h-6 w-full items-center justify-between px-3 md:justify-start"
     >
-      <div className="bg-mac_light-bg absolute top-0 left-0 -z-10 h-full w-full opacity-20 bg-blend-color-burn"></div>
+      <div
+        className={`bg-mac_light-bg absolute top-0 left-0 -z-10 h-full w-full opacity-20 bg-blend-color-burn`}
+      ></div>
       <h1
         className="mr-0.5 inline-flex h-full w-11 items-center justify-center"
         aria-label="apple 로고"
