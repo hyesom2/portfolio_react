@@ -3,14 +3,7 @@ import Icons from '@/components/Icons';
 import { useModeStore } from '@/store/useModeStore';
 
 function Menubar() {
-  const { mode, setMode } = useModeStore();
-  const handleMode = () => {
-    if (mode === 'light') {
-      setMode('dark');
-    } else {
-      setMode('light');
-    }
-  };
+  const { toggleMode } = useModeStore();
 
   const MENUBAR_MENUS = ['Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help'];
   const MENUBAR_SYSTEM = [
@@ -24,7 +17,7 @@ function Menubar() {
     },
     {
       name: 'switch_light',
-      onClick: handleMode,
+      onClick: toggleMode,
     },
   ];
 
