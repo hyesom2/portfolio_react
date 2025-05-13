@@ -19,6 +19,12 @@ body {
   overflow: hidden;
 }
 
+button {
+  display: inline-block;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -29,46 +35,59 @@ body {
 
 :root {
   /* light mode colors */
+  --light-red: #ff3b30;
+  --light-orange: #ff9500;
+  --light-yellow: #ffcc00;
+  --light-green: #34c759;
+  --light-teal: #5ac8fa;
   --light-blue: #007aff;
+  --light-indigo: #5856d6;
+  --light-purple: #af52de;
+  --light-pink: #ff2d55;
+  --light-gray-01: #8e8e93;
+  --light-gray-02: #aeaeb2;
+  --light-gray-03: #c7c7cc;
+  --light-gray-04: #d1d1d6;
+  --light-gray-05: #e5e5ea;
+  --light-gray-06: #f2f2f7;
+  /*
   --light-brown: #a2845e;
   --light-cyan: #55bef0;
   --light-gray: #8e8e93;
-  --light-green: #28cd41;
-  --light-indigo: #5856d6;
   --light-mint: #00c7be;
-  --light-orange: #ff9500;
-  --light-pink: #ff2d55;
-  --light-purple: #af52de;
-  --light-red: #ff3b30;
-  --light-teal: #59adc4;
-  --light-yellow: #ffcc00;
   --light-font: #3d3d3d;
   --light-bg: #8f8f8f;
   --light-inactive: #cecdcd;
   --light-inactive-bg: #f6f6f6;
   --light-inactive-bg-opacity: #f6f6f6;
   --light-border: rgba(0, 0, 0, 0.12);
-  --light-windowFrame-bg: #f6f6f6;
+  --light-windowFrame-bg: #f6f6f6; */
 
   /* dark mode colors */
-  --dark-blue: #0a84ff;
-  --dark-brown: #ac8e68;
-  --dark-cyan: #5ac8f5;
-  --dark-gray: #98989d;
-  --dark-green: #32d74b;
-  --dark-indigo: #5e5ce6;
-  --dark-mint: #66d4cf;
-  --dark-orange: #ff9f0a;
-  --dark-pink: #ff375f;
-  --dark-purple: #bf5af2;
   --dark-red: #ff453a;
-  --dark-teal: #6ac4dc;
+  --dark-orange: #ff9f0a;
   --dark-yellow: #ffd60a;
+  --dark-green: #32d74b;
+  --dark-teal: #64d2ff;
+  --dark-blue: #0a84ff;
+  --dark-indigo: #5e5ce6;
+  --dark-purple: #bf5af2;
+  --dark-brown: #ac8e68;
+  --dark-pink: #ff2d55;
+  --dark-gray-01: #8e8e93;
+  --dark-gray-02: #636366;
+  --dark-gray-03: #48484a;
+  --dark-gray-04: #3a3a3c;
+  --dark-gray-05: #2c2c2e;
+  --dark-gray-06: #1c1c1e;
+  /* --dark-cyan: #5ac8f5; 
+  --dark-gray: #98989d;
+  --dark-mint: #66d4cf;
   --dark-font: #ebebf5;
   --dark-inactive: #58595b;
   --dark-bg: #1e1e1e;
   --dark-window-bg: #282828;
-  --dark-window-bg-opacity: #999999;
+  --dark-window-bg-opacity: #999999; */
 
   /* ========== instagram ========== */
   --insta-black: #262626;
@@ -110,21 +129,22 @@ body {
   --font-size-48: 3rem; /* 48px */
 }
 
-@theme inline {
+@theme {
   /* light mode colors */
+  --color-mac_light-red: var(--light-red);
+  --color-mac_light-orange: var(--light-orange);
+  --color-mac_light-yellow: var(--light-yellow);
+  --color-mac_light-green: var(--light-green);
+  --color-mac_light-teal: var(--light-teal);
   --color-mac_light-blue: var(--light-blue);
+  --color-mac_light-indigo: var(--light-indigo);
+  --color-mac_light-purple: var(--light-purple);
+  --color-mac_light-pink: var(--light-pink);
+  /*
   --color-mac_light-brown: var(--light-brown);
   --color-mac_light-cyan: var(--light-cyan);
   --color-mac_light-gray: var(--light-gray);
-  --color-mac_light-green: var(--light-green);
-  --color-mac_light-indigo: var(--light-indigo);
   --color-mac_light-mint: var(--light-mint);
-  --color-mac_light-orange: var(--light-orange);
-  --color-mac_light-pink: var(--light-pink);
-  --color-mac_light-purple: var(--light-purple);
-  --color-mac_light-red: var(--light-red);
-  --color-mac_light-teal: var(--light-teal);
-  --color-mac_light-yellow: var(--light-yellow);
   --color-mac_light-font: var(--light-font);
   --color-mac_light-bg: var(--light-bg);
   --color-mac_light-inactive: var(--light-inactive);
@@ -132,6 +152,7 @@ body {
   --color-mac_light-inactive-bg-opacity: var(--light-inactive-bg-opacity);
   --color-mac_light-border: var(--light-border);
   --color-mac_light-windowFrame-bg: var(--light-windowFrame-bg);
+  */
 
   /* dark mode colors */
   --color-mac_dark-blue: var(--dark-blue);
