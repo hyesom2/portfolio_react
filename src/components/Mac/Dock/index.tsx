@@ -62,7 +62,7 @@ function Dock() {
                     animate={{ opacity: 1, y: -10 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-mac_dark-bg text-mac_dark-font absolute bottom-full left-1/2 -translate-x-1/2 transform rounded-lg px-2 py-1 whitespace-nowrap"
+                    className="bg-mac_dark-gray06/40 text-mac_dark-font absolute bottom-full left-1/2 -translate-x-1/2 transform rounded-lg px-2 py-1 font-bold whitespace-nowrap"
                   >
                     {app.title}
                   </motion.figcaption>
