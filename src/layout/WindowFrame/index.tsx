@@ -9,7 +9,7 @@ interface WindowFrameTypes {
 }
 
 function WindowFrame({ children, className }: WindowFrameTypes) {
-  const { mode } = useModeStore();
+  const mode = useModeStore((state) => state.mode);
   const location = useLocation();
   const getTitle = () => {
     if (location.pathname.startsWith('/instagram')) return 'Instagram';
