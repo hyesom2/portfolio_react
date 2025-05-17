@@ -18,13 +18,13 @@ function Button({ type, color, className, children, onClick }: ButtonTypes) {
       return (
         <button
           type="button"
-          className={`w-3 h-3 ${TRAFFIC_COLORS[color ?? 'red']} border border-mac_light-border rounded-full cursor-pointer`}
+          className={`h-3 w-3 ${color ? TRAFFIC_COLORS[color] : 'bg-mac_traffic_base'} rounded-full border border-black/12`}
           onClick={onClick}
         />
       );
   }
   return (
-    <button className={`${className} cursor-pointer`} onClick={onClick}>
+    <button className={`${className}`} onClick={onClick}>
       {children}
     </button>
   );

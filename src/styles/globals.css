@@ -21,7 +21,6 @@ body {
 
 button {
   display: inline-block;
-  background-color: inherit;
   cursor: pointer;
 }
 
@@ -34,7 +33,10 @@ button {
 }
 
 :root {
-  /* light mode colors */
+  /* mac common */
+  --traffic_base: #e3e3e3;
+
+  /* mac light mode colors */
   --light-red: #ff3b30;
   --light-orange: #ff9500;
   --light-yellow: #ffcc00;
@@ -50,20 +52,10 @@ button {
   --light-gray-04: #d1d1d6;
   --light-gray-05: #e5e5ea;
   --light-gray-06: #f2f2f7;
-  /*
-  --light-brown: #a2845e;
-  --light-cyan: #55bef0;
-  --light-gray: #8e8e93;
-  --light-mint: #00c7be;
-  --light-font: #3d3d3d;
-  --light-bg: #8f8f8f;
-  --light-inactive: #cecdcd;
-  --light-inactive-bg: #f6f6f6;
-  --light-inactive-bg-opacity: #f6f6f6;
-  --light-border: rgba(0, 0, 0, 0.12);
-  --light-windowFrame-bg: #f6f6f6; */
+  --light-font-active: #3d3d3d;
+  --light-windowFrame: #f6f6f6;
 
-  /* dark mode colors */
+  /* mac dark mode colors */
   --dark-red: #ff453a;
   --dark-orange: #ff9f0a;
   --dark-yellow: #ffd60a;
@@ -80,14 +72,8 @@ button {
   --dark-gray-04: #3a3a3c;
   --dark-gray-05: #2c2c2e;
   --dark-gray-06: #1c1c1e;
-  /* --dark-cyan: #5ac8f5; 
-  --dark-gray: #98989d;
-  --dark-mint: #66d4cf;
-  --dark-font: #ebebf5;
-  --dark-inactive: #58595b;
-  --dark-bg: #1e1e1e;
-  --dark-window-bg: #282828;
-  --dark-window-bg-opacity: #999999; */
+  --dark-font-active: rgba(235, 235, 245, 0.6);
+  --dark-windowFrame: #282828;
 
   /* ========== instagram ========== */
   --insta-black: #262626;
@@ -127,9 +113,16 @@ button {
   --font-size-30: 1.875rem; /* 30px */
   --font-size-36: 2.25rem; /* 36px */
   --font-size-48: 3rem; /* 48px */
+
+  /* shadow */
+  --shadow-inner: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.05);
+  --shadow-drop: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
 @theme {
+  /* mac common colors */
+  --color-mac_traffic_base: var(--traffic_base);
+
   /* light mode colors */
   --color-mac_light-red: var(--light-red);
   --color-mac_light-orange: var(--light-orange);
@@ -140,39 +133,34 @@ button {
   --color-mac_light-indigo: var(--light-indigo);
   --color-mac_light-purple: var(--light-purple);
   --color-mac_light-pink: var(--light-pink);
-  /*
-  --color-mac_light-brown: var(--light-brown);
-  --color-mac_light-cyan: var(--light-cyan);
-  --color-mac_light-gray: var(--light-gray);
-  --color-mac_light-mint: var(--light-mint);
-  --color-mac_light-font: var(--light-font);
-  --color-mac_light-bg: var(--light-bg);
-  --color-mac_light-inactive: var(--light-inactive);
-  --color-mac_light-inactive-bg: var(--light-inactive-bg);
-  --color-mac_light-inactive-bg-opacity: var(--light-inactive-bg-opacity);
-  --color-mac_light-border: var(--light-border);
-  --color-mac_light-windowFrame-bg: var(--light-windowFrame-bg);
-  */
+  --color-mac_light-gray01: var(--light-gray-01);
+  --color-mac_light-gray02: var(--light-gray-02);
+  --color-mac_light-gray03: var(--light-gray-03);
+  --color-mac_light-gray04: var(--light-gray-04);
+  --color-mac_light-gray05: var(--light-gray-05);
+  --color-mac_light-gray06: var(--light-gray-06);
+  --color-mac_light-font-active: var(--light-font-active);
+  --color-mac_light-windowFrame: var(--light-windowFrame);
 
   /* dark mode colors */
-  --color-mac_dark-blue: var(--dark-blue);
-  --color-mac_dark-brown: var(--dark-brown);
-  --color-mac_dark-cyan: var(--dark-cyan);
-  --color-mac_dark-gray: var(--dark-gray);
-  --color-mac_dark-green: var(--dark-green);
-  --color-mac_dark-indigo: var(--dark-indigo);
-  --color-mac_dark-mint: var(--dark-mint);
-  --color-mac_dark-orange: var(--dark-orange);
-  --color-mac_dark-pink: var(--dark-pink);
-  --color-mac_dark-purple: var(--dark-purple);
   --color-mac_dark-red: var(--dark-red);
-  --color-mac_dark-teal: var(--dark-teal);
+  --color-mac_dark-orange: var(--dark-orange);
   --color-mac_dark-yellow: var(--dark-yellow);
-  --color-mac_dark-font: var(--dark-font);
-  --color-mac_dark-inactive: var(--dark-inactive);
-  --color-mac_dark-bg: var(--dark-bg);
-  --color-mac_dark-window-bg: var(--dark-window-bg);
-  --color-mac_dark-window-bg-opacity: var(--dark-window-bg-opacity);
+  --color-mac_dark-green: var(--dark-green);
+  --color-mac_dark-teal: var(--dark-teal);
+  --color-mac_dark-blue: var(--dark-blue);
+  --color-mac_dark-indigo: var(--dark-indigo);
+  --color-mac_dark-purple: var(--dark-purple);
+  --color-mac_dark-brown: var(--dark-brown);
+  --color-mac_dark-pink: var(--dark-pink);
+  --color-mac_dark-gray01: var(--dark-gray-01);
+  --color-mac_dark-gray02: var(--dark-gray-02);
+  --color-mac_dark-gray03: var(--dark-gray-03);
+  --color-mac_dark-gray04: var(--dark-gray-04);
+  --color-mac_dark-gray05: var(--dark-gray-05);
+  --color-mac_dark-gray06: var(--dark-gray-06);
+  --color-mac_dark-font-active: var(--dark-font-active);
+  --color-mac_dark-windowFrame: var(--dark-windowFrame);
 
   /* ========== instagram ========== */
   --color-insta_black: var(--insta-black);
@@ -251,5 +239,13 @@ button {
   }
   .fs-48 {
     font-size: var(--font-size-48); /* 48px */
+  }
+
+  /* shadow */
+  .shadow-inner {
+    box-shadow: var(--shadow-inner);
+  }
+  .shadow-drop {
+    box-shadow: var(--shadow-drop);
   }
 }

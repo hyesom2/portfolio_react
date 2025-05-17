@@ -1,22 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@/components/Button';
+import { useModeStore } from '@/store/useModeStore';
 
-// const TRAFFIC_BUTTON = {};
-
-// interface TrafficLightsTypes {
-//   type?: 'traffic_light' | 'traffic_inactive' | 'traffic_not-expandable';
-// }
-
-// function TrafficLights({ type }: TrafficLightsTypes) {
 function TrafficLights() {
+  const { mode } = useModeStore();
   const navigate = useNavigate();
   const handleRedButton = () => {
     navigate('/');
   };
 
   return (
-    <ul className="flex items-center gap-2">
+    <ul className={`flex items-center gap-2 bg-inherit`}>
       <li>
         <Button type="traffic" color="red" onClick={handleRedButton} />
       </li>
