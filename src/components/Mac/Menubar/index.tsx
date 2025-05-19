@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
+
 import Button from '@/components/Button';
 import Icons from '@/components/Icons';
+import Time from '@/components/Mac/Menubar/Time';
 import { useModeStore } from '@/store/useModeStore';
+import { useTimeStore } from '@/store/useTimeStore';
 
 function Menubar() {
-  const { toggleMode } = useModeStore();
+  const toggleMode = useModeStore((state) => state.toggleMode);
+  const updateTime = useTimeStore((state) => state.updateTime);
 
   const MENUBAR_MENUS = ['Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help'];
   const MENUBAR_SYSTEM = [
@@ -20,6 +25,25 @@ function Menubar() {
       onClick: toggleMode,
     },
   ];
+
+  useEffect(() => {
+    updateTime();
+
+    const now = new Date();
+    const delay = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+
+    const timeout = setTimeout(() => {
+      updateTime();
+
+      const interval = setInterval(() => {
+        updateTime();
+      }, 60000);
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [updateTime]);
 
   return (
     <nav
@@ -57,8 +81,7 @@ function Menubar() {
             </button>
           </li>
         ))}
-        <li role="none">Mon Jun 22</li>
-        <li role="none">9:41 AM</li>
+        <Time />
       </ul>
     </nav>
   );
