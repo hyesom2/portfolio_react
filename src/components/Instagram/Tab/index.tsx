@@ -1,4 +1,5 @@
 import Icons from '@/components/Icons';
+import { useModeStore } from '@/store/useModeStore';
 
 const TAB_LIST = [
   {
@@ -19,15 +20,17 @@ const TAB_LIST = [
 ];
 
 function Tab() {
+  const mode = useModeStore((state) => state.mode);
+
   return (
     <ul
-      className="border-insta_button-gray-hover fs-14 flex min-h-14 w-full items-center justify-center gap-8 border-t md:gap-16"
+      className={`fs-14 flex min-h-14 w-full items-center justify-center gap-8 border-t md:gap-16 ${mode === 'dark' ? 'border-white' : 'border-insta_gray-300'}`}
       role="tablist"
       aria-label="instagram 콘텐츠 탭"
     >
       {TAB_LIST.map((tab) => (
         <li
-          className="text-insta_gray flex cursor-pointer items-center gap-2 hover:font-semibold"
+          className={`flex cursor-pointer items-center gap-2 hover:font-semibold ${mode === 'dark' ? 'text-white' : 'text-insta_gray-500 hover:text-insta_gray-900'}`}
           role="tab"
           key={tab.id}
           tabIndex={0}

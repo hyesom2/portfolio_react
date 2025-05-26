@@ -2,9 +2,12 @@ import { useNavigate } from 'react-router-dom';
 
 import Icons from '@/components/Icons';
 import PORTFOLIO_DATA from '@/data/Portfolio';
+import { useModeStore } from '@/store/useModeStore';
 
 function Posts() {
   const navigate = useNavigate();
+  const mode = useModeStore((state) => state.mode);
+
   function handleOpenModal(id: number) {
     navigate(`post/${id}`);
   }
@@ -16,7 +19,7 @@ function Posts() {
         .map((portfolio) => (
           <li
             key={portfolio.id}
-            className="bg-insta_inactive relative flex cursor-pointer items-center justify-center"
+            className={`relative flex cursor-pointer items-center justify-center ${mode === 'dark' ? 'bg-insta_gray-900' : 'bg-insta_gray-200'}`}
             role="listitem"
             aria-label={`${portfolio.title} 게시물`}
             onClick={() => handleOpenModal(portfolio.id)}
