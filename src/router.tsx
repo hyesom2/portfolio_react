@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { RootLayout } from '@/layout';
-import { Instagram, Mac, Modal, Note, Profile } from '@/pages';
+import { Home, Instagram, Mac, Modal, Note, Profile } from '@/pages';
 
 export const routes = [
   {
@@ -16,6 +16,10 @@ export const routes = [
             path: 'instagram',
             element: <Instagram />,
             children: [
+              {
+                path: 'home',
+                element: <Home />,
+              },
               {
                 path: 'profile',
                 element: <Profile />,
