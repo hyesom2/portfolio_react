@@ -76,20 +76,20 @@ button {
   --dark-windowFrame: #282828;
 
   /* ========== instagram ========== */
-  --insta-black: #262626;
-  --insta-gray: #8e8e8e;
-  --insta-nav-border: #dbdbdb;
-  --insta-nav-hover: rgba(0, 0, 0, 0.05);
-  --insta-inactive: #fafafa;
-  --insta-button-gray: #efefef;
-  --insta-button-gray-hover: rgba(219, 219, 219);
-  --insta-purple: #833ab4;
-  --insta-orange: #fd1d1d;
+  --insta-red: #fd0635;
+  --insta-orange: #fa7e1e;
   --insta-yellow: #fcb045;
+  --insta-blue: #0094f5;
+  --insta-pink: #d62976;
+  --insta-purple: #833ab4;
+  --insta-gray-200: #efefef;
+  --insta-gray-300: #d0d0d0;
+  --insta-gray-500: #969696;
+  --insta-gray-800: #464646;
+  --insta-gray-900: #262626;
   --insta-overlay: rgba(0, 0, 0, 0.65);
-  --insta-badge-blue: rgb(0, 149, 246);
-  --insta-font: #383838;
-  --insta-link: rgba(0, 55, 107, 1);
+  --insta-link-light: rgba(0, 55, 107, 1);
+  --insta-link-dark: #004c8b;
 
   /* font weight */
   --font-weight-thin: 100;
@@ -163,20 +163,20 @@ button {
   --color-mac_dark-windowFrame: var(--dark-windowFrame);
 
   /* ========== instagram ========== */
-  --color-insta_black: var(--insta-black);
-  --color-insta_gray: var(--insta-gray);
-  --color-insta_nav-border: var(--insta-nav-border);
-  --color-insta_nav-hover: var(--insta-nav-hover);
-  --color-insta_inactive: var(--insta-inactive);
-  --color-insta_button-gray: var(--insta-button-gray);
-  --color-insta_button-gray-hover: var(--insta-button-gray-hover);
-  --color-insta_purple: var(--insta-purple);
-  --color-insta_orange: var(--insta-orange);
+  --color-insta_red: var(--insta-red);
+  --color-insta-orange: var(--insta-orange);
   --color-insta_yellow: var(--insta-yellow);
+  --color-insta_blue: var(--insta-blue);
+  --color-insta_pink: var(--insta-pink);
+  --color-insta_purple: var(--insta-purple);
+  --color-insta_gray-200: var(--insta-gray-200);
+  --color-insta_gray-300: var(--insta-gray-300);
+  --color-insta_gray-500: var(--insta-gray-500);
+  --color-insta_gray-800: var(--insta-gray-800);
+  --color-insta_gray-900: var(--insta-gray-900);
   --color-insta_overlay: var(--insta-overlay);
-  --color-insta_badge-blue: var(--insta-badge-blue);
-  --color-insta_font: var(--insta-font);
-  --color-insta_link: var(--insta-link);
+  --color-insta_link-light: var(--insta-link-light);
+  --color-insta_link-dark: var(--insta-link-dark);
 }
 
 @layer utilities {

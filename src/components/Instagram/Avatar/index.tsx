@@ -9,7 +9,7 @@ function Avatar({ type, imgURL, name }: AvatarTypes) {
     <figure className="flex shrink-0 items-center justify-start gap-4 overflow-hidden">
       <img src={imgURL} alt="" className="h-8 w-8 rounded-full object-cover" />
       <figcaption
-        className={`${type === 'profile' ? 'fs-14 text-insta_font font-semibold' : 'sr-only'}`}
+        className={`${type === 'profile' ? 'fs-14 text-insta_gray-900 font-semibold' : 'sr-only'}`}
       >
         {name}
       </figcaption>

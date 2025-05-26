@@ -41,14 +41,14 @@ function Profile() {
         <div className="flex flex-1 flex-col items-center gap-5 md:items-start">
           <div className="inline-flex items-center justify-center gap-2">
             <strong
-              className={`font-regular fs-20 ${mode === 'dark' ? 'text-white' : 'text-insta_font'}`}
+              className={`font-regular fs-20 ${mode === 'dark' ? 'text-white' : 'text-insta_gray-900'}`}
             >
               {USER.name}
             </strong>
-            <Icons type="instagram" name="badge" className="fs-20 text-insta_badge-blue" />
+            <Icons type="instagram" name="badge" className="fs-20 text-insta_blue" />
             <Button
               onClick={handleResumeButton}
-              className={`bg-insta_button-gray hover:bg-insta_button-gray-hover fs-13 rounded-lg px-4 py-2 font-semibold text-black`}
+              className={`bg-insta_gray-200 hover:bg-insta_gray-300 fs-13 rounded-lg px-4 py-2 font-semibold text-black`}
             >
               이력서 보기
             </Button>

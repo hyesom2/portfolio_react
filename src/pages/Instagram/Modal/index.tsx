@@ -27,7 +27,7 @@ function Modal() {
             <div className="flex w-full flex-col gap-2 pl-12">
               <div>
                 {post?.description.map((desc, index) => (
-                  <p key={index} className="fs-14 text-insta_black">
+                  <p key={index} className="fs-14 text-insta_gray-900">
                     {desc}
                   </p>
                 ))}
@@ -39,7 +39,7 @@ function Modal() {
                   </li>
                 ))}
               </ul>
-              <time dateTime={post?.period} className="fs-12 text-insta_gray">
+              <time dateTime={post?.period} className="fs-12 text-insta_gray-500">
                 {post?.period}
               </time>
               <ul className="flex items-center justify-start gap-2">
