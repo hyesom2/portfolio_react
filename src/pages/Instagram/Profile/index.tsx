@@ -34,9 +34,9 @@ function Profile() {
   }
 
   return (
-    <section className="flex h-full max-h-full w-full flex-col justify-start gap-4 pt-8 pb-12 lg:gap-11 lg:px-16 lg:py-8">
+    <section className="flex h-full max-h-full w-full flex-col justify-start gap-4 pt-7 lg:gap-11 lg:px-16 lg:py-7">
       <h1 className="sr-only">Profile</h1>
-      <header className="flex flex-col items-center justify-start gap-2 px-5 md:flex-row md:gap-4 lg:gap-24">
+      <header className="flex flex-col items-center justify-start gap-2 px-5 pt-2 md:flex-row md:gap-4 lg:gap-24 lg:pt-4">
         <UserProfile />
         <div className="flex flex-1 flex-col items-center gap-5 md:items-start">
           <div className="inline-flex items-center justify-center gap-2">
