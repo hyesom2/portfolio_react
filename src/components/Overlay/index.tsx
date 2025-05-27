@@ -10,7 +10,7 @@ function Overlay({ children }: { children: React.ReactNode }) {
 
   function handlePostFn(direction: 'prev' | 'next') {
     const currentIndex = PORTFOLIO_DATA.findIndex((item) => item.id === Number(id));
-    const lastIndex = PORTFOLIO_DATA.length - 1; // 3
+    const lastIndex = PORTFOLIO_DATA.length - 1;
     let newIndex;
 
     if (currentIndex === -1) return;
@@ -22,7 +22,7 @@ function Overlay({ children }: { children: React.ReactNode }) {
     }
 
     const newId = PORTFOLIO_DATA[newIndex].id;
-    navigate(`/instagram/profile/post/${newId}`);
+    navigate(`/instagram/profile/post/${newId}`, { replace: true });
   }
 
   return (
