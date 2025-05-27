@@ -29,7 +29,7 @@ function Menubar() {
           className={`border-insta_gray-300 fixed bottom-0 z-50 flex h-12 w-full items-center justify-between border-t px-8 ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}
         >
           <h1 className="h-15 px-3">
-            <Link to="/instagram" className="inline-flex h-full w-full">
+            <Link to="/instagram/home" className="inline-flex h-full w-full">
               {mode === 'dark' ? (
                 <img src="/images/hyeonstagram_dark.webp" alt="" className="block h-full w-full" />
               ) : (
@@ -51,7 +51,7 @@ function Menubar() {
           className={`border-insta_gray-300 left-0 flex w-full flex-col gap-7 border-r px-3 pt-10 pb-4 md:fixed md:w-60 ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}
         >
           <h1 className="h-25 px-3">
-            <Link to="/instagram" className="inline-flex h-full w-full">
+            <Link to="/instagram/home" className="inline-flex h-full w-full">
               {mode === 'dark' ? (
                 <img src="/images/hyeonstagram_dark.webp" alt="" className="block h-full w-full" />
               ) : (
