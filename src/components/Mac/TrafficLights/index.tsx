@@ -1,13 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@/components/Button';
-import { useModeStore } from '@/store/useModeStore';
 
 function TrafficLights() {
-  const { mode } = useModeStore();
   const navigate = useNavigate();
   const handleRedButton = () => {
-    navigate('/');
+    navigate('/', { replace: true });
   };
 
   return (
