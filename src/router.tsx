@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { RootLayout } from '@/layout';
-import { Home, Instagram, Mac, Modal, Note, Profile } from '@/pages';
+import { GuestBookDetail, GuestBookMemo, RootLayout } from '@/layout';
+import { GuestBook, Home, Instagram, Mac, Modal, Profile } from '@/pages';
 
 export const routes = [
   {
@@ -33,8 +33,22 @@ export const routes = [
             ],
           },
           {
-            path: 'Note',
-            element: <Note />,
+            path: 'guestbook',
+            element: <GuestBook />,
+            children: [
+              {
+                path: '',
+                element: <GuestBookDetail />,
+              },
+              {
+                path: 'add',
+                element: <GuestBookMemo />,
+              },
+              {
+                path: ':id',
+                element: <GuestBookDetail />,
+              },
+            ],
           },
         ],
       },

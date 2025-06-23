@@ -13,7 +13,7 @@ const DOCK_DATA = [
   },
   {
     id: 1,
-    title: 'note',
+    title: 'guestbook',
     img_light_url: '/images/note_light.webp',
     img_dark_url: '/images/note_dark.webp',
   },
