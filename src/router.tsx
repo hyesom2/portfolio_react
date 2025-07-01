@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { GuestBookDetail, GuestBookMemo, RootLayout } from '@/layout';
-import { GuestBook, Home, Instagram, Mac, Modal, Profile } from '@/pages';
+import { Finder, GuestBook, Home, Instagram, Mac, Modal, Profile } from '@/pages';
 
 export const routes = [
   {
@@ -12,6 +12,10 @@ export const routes = [
         path: '/',
         element: <Mac />,
         children: [
+          {
+            path: 'finder',
+            element: <Finder />,
+          },
           {
             path: 'instagram',
             element: <Instagram />,
