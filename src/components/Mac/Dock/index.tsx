@@ -7,15 +7,21 @@ import { useModeStore } from '@/store/useModeStore';
 const DOCK_DATA = [
   {
     id: 0,
+    title: 'finder',
+    img_light_url: '/images/finder_light.webp',
+    img_dark_url: '/images/finder_dark.webp',
+  },
+  {
+    id: 1,
     title: 'instagram',
     img_light_url: '/images/instagram_logo.webp',
     img_dark_url: '/images/instagram_logo.webp',
   },
   {
-    id: 1,
+    id: 2,
     title: 'guestbook',
-    img_light_url: '/images/note_light.webp',
-    img_dark_url: '/images/note_dark.webp',
+    img_light_url: '/images/messages_light.webp',
+    img_dark_url: '/images/messages_dark.webp',
   },
 ];
 

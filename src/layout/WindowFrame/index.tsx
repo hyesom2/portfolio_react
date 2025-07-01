@@ -12,8 +12,9 @@ function WindowFrame({ children, className }: WindowFrameTypes) {
   const mode = useModeStore((state) => state.mode);
   const location = useLocation();
   const getTitle = () => {
-    if (location.pathname.startsWith('/instagram')) return 'Instagram';
-    if (location.pathname.startsWith('/note')) return 'GuestBook';
+    if (location.pathname.startsWith('/finder')) return 'Finder';
+    if (location.pathname.startsWith('/instagram')) return 'Hyeonstagram';
+    if (location.pathname.startsWith('/guestbook')) return 'GuestBook';
   };
 
   return (

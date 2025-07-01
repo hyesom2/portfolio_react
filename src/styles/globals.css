@@ -54,6 +54,8 @@ button {
   --light-gray-06: #f2f2f7;
   --light-font-active: #3d3d3d;
   --light-windowFrame: #f6f6f6;
+  --light-border: rgba(0, 0, 0, 0.3);
+  --light-alert-bg: rgba(249, 249, 249, 0.78);
 
   /* mac dark mode colors */
   --dark-red: #ff453a;
@@ -107,12 +109,16 @@ button {
   --font-size-13: 0.8125rem; /* 13px */
   --font-size-14: 0.875rem; /* 14px */
   --font-size-16: 1rem; /* 16px */
+  --font-size-17: 1.0625rem; /* 17px */
   --font-size-18: 1.125rem; /* 18px */
   --font-size-20: 1.25rem; /* 20px */
   --font-size-24: 1.5rem; /* 24px */
   --font-size-30: 1.875rem; /* 30px */
   --font-size-36: 2.25rem; /* 36px */
   --font-size-48: 3rem; /* 48px */
+
+  /* border-radius */
+  --rounded-14: 0.875rem; /* 14px */
 
   /* shadow */
   --shadow-inner: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.05);
@@ -141,6 +147,8 @@ button {
   --color-mac_light-gray06: var(--light-gray-06);
   --color-mac_light-font-active: var(--light-font-active);
   --color-mac_light-windowFrame: var(--light-windowFrame);
+  --color-mac_light-border: var(--light-border);
+  --color-mac_light-alert-bg: var(--light-alert-bg);
 
   /* dark mode colors */
   --color-mac_dark-red: var(--dark-red);
@@ -222,6 +230,9 @@ button {
   .fs-16 {
     font-size: var(--font-size-16); /* 16px */
   }
+  .fs-17 {
+    font-size: var(--font-size-17); /* 17px */
+  }
   .fs-18 {
     font-size: var(--font-size-18); /* 18px */
   }
@@ -239,6 +250,11 @@ button {
   }
   .fs-48 {
     font-size: var(--font-size-48); /* 48px */
+  }
+
+  /* border-radius */
+  .rounded-14 {
+    border-radius: var(--rounded-14);
   }
 
   /* shadow */
