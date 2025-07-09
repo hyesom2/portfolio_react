@@ -10,20 +10,6 @@ export default {
       xl: '1280px',
     },
   },
-  plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        '.scrollbar-hide': {
-          /* for Chrome, Safari and Opera */
-          '&::-webkit-scrollbar': {
-            display: 'none',
-          },
-          /* for IE, Edge and Firefox */
-          '-ms-overflow-style': 'none',
-          'scrollbar-width': 'none',
-        },
-      });
-    },
-  ],
+  plugins: [require('tailwind-scrollbar-hide')],
   darkMode: 'class',
 };

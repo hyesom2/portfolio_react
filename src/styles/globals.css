@@ -1,5 +1,6 @@
 @import '@/styles/fonts.css';
 @import 'tailwindcss';
+@import 'tailwind-scrollbar-hide/v4';
 @tailwind utilities;
 
 html,
@@ -20,16 +21,7 @@ body {
 }
 
 button {
-  display: inline-block;
   cursor: pointer;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
 }
 
 :root {
@@ -52,7 +44,7 @@ button {
   --light-gray-04: #d1d1d6;
   --light-gray-05: #e5e5ea;
   --light-gray-06: #f2f2f7;
-  --light-font-active: #3d3d3d;
+  --light-font-active: rgba(60, 60, 67, 0.6);
   --light-windowFrame: #f6f6f6;
   --light-border: rgba(0, 0, 0, 0.3);
   --light-alert-bg: rgba(249, 249, 249, 0.78);
@@ -76,6 +68,7 @@ button {
   --dark-gray-06: #1c1c1e;
   --dark-font-active: rgba(235, 235, 245, 0.6);
   --dark-windowFrame: #282828;
+  --dark-profile-bg: rgba(118, 118, 128, 0.24);
 
   /* ========== instagram ========== */
   --insta-red: #fd0635;
@@ -114,11 +107,15 @@ button {
   --font-size-20: 1.25rem; /* 20px */
   --font-size-24: 1.5rem; /* 24px */
   --font-size-30: 1.875rem; /* 30px */
+  --font-size-34: 2.125rem; /* 34px */
   --font-size-36: 2.25rem; /* 36px */
   --font-size-48: 3rem; /* 48px */
 
   /* border-radius */
+  --rounded-7: 0.4375rem; /* 7px */
+  --rounded-10: 0.625rem; /* 10px */
   --rounded-14: 0.875rem; /* 14px */
+  --rounded-15: 0.9375rem; /* 15px */
 
   /* shadow */
   --shadow-inner: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.05);
@@ -169,6 +166,7 @@ button {
   --color-mac_dark-gray06: var(--dark-gray-06);
   --color-mac_dark-font-active: var(--dark-font-active);
   --color-mac_dark-windowFrame: var(--dark-windowFrame);
+  --color-mac_dark-profileBg: var(--dark-profile-bg);
 
   /* ========== instagram ========== */
   --color-insta_red: var(--insta-red);
@@ -245,6 +243,9 @@ button {
   .fs-30 {
     font-size: var(--font-size-30); /* 30px */
   }
+  .fs-34 {
+    font-size: var(--font-size-34); /* 34px */
+  }
   .fs-36 {
     font-size: var(--font-size-36); /* 36px */
   }
@@ -253,8 +254,17 @@ button {
   }
 
   /* border-radius */
+  .rounded-7 {
+    border-radius: var(--rounded-7);
+  }
+  .rounded-10 {
+    border-radius: var(--rounded-10);
+  }
   .rounded-14 {
     border-radius: var(--rounded-14);
+  }
+  .rounded-15 {
+    border-radius: var(--rounded-15);
   }
 
   /* shadow */
