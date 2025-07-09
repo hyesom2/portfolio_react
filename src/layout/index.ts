@@ -1,5 +1,10 @@
 export { default as GuestBookDetail } from '@/layout/GuestBook/Detail';
 export { default as GuestBookMain } from '@/layout/GuestBook/Main';
 export { default as GuestBookMemo } from '@/layout/GuestBook/Memo';
+export { default as ProfileCertificate } from '@/layout/Profile/Certificate';
+export { default as ProfileHistory } from '@/layout/Profile/History';
+export { default as ProfileInfo } from '@/layout/Profile/Info';
+export { default as ProfileIntroduction } from '@/layout/Profile/Introduction';
+export { default as ProfileSkills } from '@/layout/Profile/Skills';
 export { default as RootLayout } from '@/layout/RootLayout';
 export { default as WindowFrame } from '@/layout/WindowFrame';

@@ -1,6 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { GuestBookDetail, GuestBookMemo, RootLayout } from '@/layout';
+import {
+  GuestBookDetail,
+  GuestBookMemo,
+  ProfileCertificate,
+  ProfileHistory,
+  ProfileInfo,
+  ProfileIntroduction,
+  ProfileSkills,
+  RootLayout,
+} from '@/layout';
 import { Finder, GuestBook, Home, Instagram, Mac, Modal, Profile } from '@/pages';
 
 export const routes = [
@@ -13,8 +22,30 @@ export const routes = [
         element: <Mac />,
         children: [
           {
-            path: 'finder',
+            path: 'profile',
             element: <Finder />,
+            children: [
+              {
+                path: 'info',
+                element: <ProfileInfo />,
+              },
+              {
+                path: 'history',
+                element: <ProfileHistory />,
+              },
+              {
+                path: 'skills',
+                element: <ProfileSkills />,
+              },
+              {
+                path: 'introduction',
+                element: <ProfileIntroduction />,
+              },
+              {
+                path: 'certificate',
+                element: <ProfileCertificate />,
+              },
+            ],
           },
           {
             path: 'instagram',

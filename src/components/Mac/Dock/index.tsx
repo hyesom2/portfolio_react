@@ -7,7 +7,7 @@ import { useModeStore } from '@/store/useModeStore';
 const DOCK_DATA = [
   {
     id: 0,
-    title: 'finder',
+    title: 'profile',
     img_light_url: '/images/finder_light.webp',
     img_dark_url: '/images/finder_dark.webp',
   },
@@ -33,6 +33,8 @@ function Dock() {
   const handleAppClick = (title: string) => {
     if (title === 'instagram') {
       navigate(`/${title}/profile`);
+    } else if (title === 'profile') {
+      navigate(`/${title}/info`);
     } else {
       navigate(`/${title}`);
     }
