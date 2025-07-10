@@ -44,6 +44,7 @@ button {
   --light-gray-04: #d1d1d6;
   --light-gray-05: #e5e5ea;
   --light-gray-06: #f2f2f7;
+  --light-font: #3c3c43;
   --light-font-active: rgba(60, 60, 67, 0.6);
   --light-windowFrame: #f6f6f6;
   --light-border: rgba(0, 0, 0, 0.3);
@@ -66,6 +67,7 @@ button {
   --dark-gray-04: #3a3a3c;
   --dark-gray-05: #2c2c2e;
   --dark-gray-06: #1c1c1e;
+  --dark-font: #ebebf5;
   --dark-font-active: rgba(235, 235, 245, 0.6);
   --dark-windowFrame: #282828;
   --dark-profile-bg: rgba(118, 118, 128, 0.24);
@@ -142,6 +144,7 @@ button {
   --color-mac_light-gray04: var(--light-gray-04);
   --color-mac_light-gray05: var(--light-gray-05);
   --color-mac_light-gray06: var(--light-gray-06);
+  --color-mac_light-font: var(--light-font);
   --color-mac_light-font-active: var(--light-font-active);
   --color-mac_light-windowFrame: var(--light-windowFrame);
   --color-mac_light-border: var(--light-border);
@@ -164,6 +167,7 @@ button {
   --color-mac_dark-gray04: var(--dark-gray-04);
   --color-mac_dark-gray05: var(--dark-gray-05);
   --color-mac_dark-gray06: var(--dark-gray-06);
+  --color-mac_dark-font: var(--dark-font);
   --color-mac_dark-font-active: var(--dark-font-active);
   --color-mac_dark-windowFrame: var(--dark-windowFrame);
   --color-mac_dark-profileBg: var(--dark-profile-bg);

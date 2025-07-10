@@ -2,7 +2,31 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import Icons from '@/components/Icons';
+import ProfileMenu from '@/components/Mac/GlobalSidebar/ProfileSidebar/ProfileMenu';
 import { useModeStore } from '@/store/useModeStore';
+
+const PROFILE_MENU_LIST = [
+  {
+    id: 0,
+    title: '자기소개 / 가치관',
+    name: 'introduction',
+  },
+  {
+    id: 1,
+    title: '경력사항 / 교육',
+    name: 'history',
+  },
+  {
+    id: 2,
+    title: '사용 언어',
+    name: 'skills',
+  },
+  {
+    id: 3,
+    title: '자격증',
+    name: 'certificate',
+  },
+];
 
 function ProfileSidebar() {
   const mode = useModeStore((state) => state.mode);
@@ -17,12 +41,16 @@ function ProfileSidebar() {
           <Link to={'/profile'}>Profile</Link>
         </h2>
       </header>
+
       <div className="scrollbar-hide flex h-full flex-1 flex-col gap-9 overflow-y-scroll px-4 pb-11">
         <ul
           className={`rounded-14 flex flex-col ${mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-white'}`}
           role="menu"
         >
-          <li role="menuitem">
+          <li
+            role="menuitem"
+            className={`border-b last:border-b-0 ${mode === 'dark' ? 'border-b-mac_dark-gray03' : 'border-b-mac_light-gray03'}`}
+          >
             <button
               type="button"
               className="relative inline-flex w-full items-center gap-4 px-4 py-2 hover:font-bold focus:font-bold active:font-bold"
@@ -40,7 +68,7 @@ function ProfileSidebar() {
               <Icons
                 type="mac"
                 name="chevron_light"
-                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
+                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-mac_dark-font/30' : 'text-mac_light-font/30'}`}
               />
             </button>
           </li>
@@ -49,66 +77,9 @@ function ProfileSidebar() {
           className={`rounded-14 flex flex-col ${mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-white'}`}
           role="menu"
         >
-          <li role="menuitem">
-            <button
-              type="button"
-              className="border-b-mac_light-gray03 relative inline-flex w-full items-center gap-4 border-b px-4 py-2 hover:font-bold focus:font-bold active:font-bold"
-              onClick={() => navigate('introduction')}
-            >
-              <span className={`${mode === 'dark' ? 'text-white' : 'text-black'}`}>
-                자기소개 / 가치관
-              </span>
-              <Icons
-                type="mac"
-                name="chevron_light"
-                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
-              />
-            </button>
-          </li>
-          <li role="menuitem">
-            <button
-              type="button"
-              className="border-b-mac_light-gray03 relative inline-flex w-full items-center gap-4 border-b px-4 py-2 hover:font-bold focus:font-bold active:font-bold"
-              onClick={() => navigate('history')}
-            >
-              <span className={`${mode === 'dark' ? 'text-white' : 'text-black'}`}>
-                경력사항 / 교육
-              </span>
-              <Icons
-                type="mac"
-                name="chevron_light"
-                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
-              />
-            </button>
-          </li>
-          <li role="menuitem">
-            <button
-              type="button"
-              className="border-b-mac_light-gray03 relative inline-flex w-full items-center gap-4 border-b px-4 py-2 hover:font-bold focus:font-bold active:font-bold"
-              onClick={() => navigate('skills')}
-            >
-              <span className={`${mode === 'dark' ? 'text-white' : 'text-black'}`}>사용 언어</span>
-              <Icons
-                type="mac"
-                name="chevron_light"
-                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
-              />
-            </button>
-          </li>
-          <li role="menuitem">
-            <button
-              type="button"
-              className="relative inline-flex w-full items-center gap-4 px-4 py-2 hover:font-bold focus:font-bold active:font-bold"
-              onClick={() => navigate('certificate')}
-            >
-              <span className={`${mode === 'dark' ? 'text-white' : 'text-black'}`}>자격증</span>
-              <Icons
-                type="mac"
-                name="chevron_light"
-                className={`absolute top-1/2 right-4 -translate-y-1/2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}
-              />
-            </button>
-          </li>
+          {PROFILE_MENU_LIST.map((item) => (
+            <ProfileMenu data={item} />
+          ))}
         </ul>
       </div>
     </aside>
