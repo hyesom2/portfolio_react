@@ -34,7 +34,7 @@ function Certificate() {
   const mode = useModeStore((state) => state.mode);
 
   return (
-    <section className="flex w-full flex-col gap-4 px-16 py-11">
+    <section className="scrollbar-hide flex w-full flex-col gap-4 overflow-y-scroll px-16 py-11">
       <h1 className="sr-only">certificate</h1>
 
       <div>
