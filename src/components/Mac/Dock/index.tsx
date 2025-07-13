@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { useDockStore } from '@/store/useDockStore';
 import { useModeStore } from '@/store/useModeStore';
 
 const DOCK_DATA = [
@@ -28,9 +29,12 @@ const DOCK_DATA = [
 function Dock() {
   const navigate = useNavigate();
   const { mode } = useModeStore();
+  const setActiveApp = useDockStore((state) => state.setActiveApp);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   const handleAppClick = (title: string) => {
+    setActiveApp(title);
+
     if (title === 'instagram') {
       navigate(`/${title}/profile`);
     } else if (title === 'profile') {
