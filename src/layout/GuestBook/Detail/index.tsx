@@ -40,7 +40,6 @@ function GuestDetail() {
       .then((data) => {
         setGuestBook(data);
         setEditContent(data?.content || '');
-        console.log('guestBook:', data);
       })
       .catch((err) => {
         console.error('Error fetching guestbook:', err.message);

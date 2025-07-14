@@ -75,11 +75,7 @@ export async function updateGuestBook(id: string, updatedData: Partial<{ content
 }
 
 export async function deleteGuestBook(id: string) {
-  console.log('deleteGuestBook 호출됨, id:', id);
-
   const { data, error } = await supabase.from('guestbook').delete().eq('id', id).select();
-
-  console.log('삭제 결과:', { data, error });
 
   if (error) {
     console.error('삭제 에러:', error);
