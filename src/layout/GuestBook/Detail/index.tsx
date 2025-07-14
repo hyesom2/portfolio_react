@@ -144,7 +144,7 @@ function GuestDetail() {
         <div className="flex flex-row items-center justify-start gap-2">
           <ChatBubble>{guestBook?.content}</ChatBubble>
           <Button
-            className="fs-30 bg-mac_light-gray06 relative left-3 flex items-center justify-center rounded-full p-1"
+            className={`fs-30 relative left-3 flex items-center justify-center rounded-full p-1 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 text-black'}`}
             onClick={handleMore}
           >
             <Icons type="instagram" name="options" />
