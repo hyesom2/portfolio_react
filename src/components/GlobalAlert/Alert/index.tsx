@@ -39,6 +39,7 @@ function Alert({ type, title, content, placeholder, onClickConfirm, onClickCance
               className="rounded-md border border-[#3C3C43] px-2 py-1"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
+              maxLength={10}
             />
           </div>
         );
