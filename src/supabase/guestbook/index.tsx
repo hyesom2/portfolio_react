@@ -10,26 +10,51 @@ export async function fetchAllGuestBooks() {
   return data;
 }
 
-export async function fetchGuestBook(nickname: string) {
-  const { data, error } = await supabase
-    .from('guestbook')
-    .select('*')
-    .eq('nickname', nickname)
-    .single();
+export async function fetchGuestBook(id: string) {
+  const { data, error } = await supabase.from('guestbook').select('*').eq('id', id).single();
 
-  if (error) console.error('Error fetching guestbook :', error);
+  if (error) throw error;
   return data;
 }
 
 export async function insertGuestBook(
-  title: string,
+  imgFile: File | null,
   nickname: string,
   content: string,
   password: string,
 ) {
+  let imgUrl = '';
+
+  if (imgFile) {
+    const fileExt = imgFile.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+    const filePath = `guestbook/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('guestbook-images')
+      .upload(filePath, imgFile);
+
+    if (uploadError) {
+      throw new Error(`이미지 업로드 실패: ${uploadError.message}`);
+    }
+
+    const {
+      data: { publicUrl },
+    } = supabase.storage.from('guestbook-images').getPublicUrl(filePath);
+
+    imgUrl = publicUrl;
+  }
+
   const { data, error } = await supabase
     .from('guestbook')
-    .insert([{ title: title, nickname: nickname, content: content, password: password }])
+    .insert([
+      {
+        profile_img: imgUrl,
+        nickname: nickname,
+        content: content,
+        password: password,
+      },
+    ])
     .select()
     .single();
 
@@ -37,14 +62,11 @@ export async function insertGuestBook(
   return data;
 }
 
-export async function updateGuestBook(
-  nickname: string,
-  updatedData: Partial<{ title: string; content: string }>,
-) {
+export async function updateGuestBook(id: string, updatedData: Partial<{ content: string }>) {
   const { data, error } = await supabase
     .from('guestbook')
     .update(updatedData)
-    .eq('nickname', nickname)
+    .eq('id', id)
     .select()
     .single();
 
@@ -52,14 +74,10 @@ export async function updateGuestBook(
   return data;
 }
 
-export async function deleteGuestBook(nickname: string) {
-  console.log('deleteGuestBook 호출됨, nickname:', nickname);
+export async function deleteGuestBook(id: string) {
+  console.log('deleteGuestBook 호출됨, id:', id);
 
-  const { data, error } = await supabase
-    .from('guestbook')
-    .delete()
-    .eq('nickname', nickname)
-    .select();
+  const { data, error } = await supabase.from('guestbook').delete().eq('id', id).select();
 
   console.log('삭제 결과:', { data, error });
 

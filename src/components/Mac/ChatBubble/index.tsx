@@ -14,7 +14,7 @@ function ChatBubble({ type, children }: ChatBubbleProps) {
         return (
           <div className="flex items-end justify-end">
             <div
-              className={`fs-17 relative right-3 max-w-[640px] rounded-2xl px-4 py-2 text-white ${mode === 'dark' ? 'bg-mac_dark-blue' : 'bg-mac_light-blue'}`}
+              className={`fs-17 relative right-3 max-w-[640px] rounded-2xl px-4 py-2 whitespace-pre-wrap text-white ${mode === 'dark' ? 'bg-mac_dark-blue' : 'bg-mac_light-blue'}`}
             >
               {children}
               <div
@@ -24,10 +24,11 @@ function ChatBubble({ type, children }: ChatBubbleProps) {
           </div>
         );
     }
+
     return (
       <div className="flex items-end">
         <div
-          className={`fs-17 rounded-14 relative left-3 max-w-[640px] px-3.5 py-2 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 text-black'}`}
+          className={`fs-17 rounded-14 relative left-3 max-w-[640px] px-3.5 py-2 whitespace-pre-wrap ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 text-black'}`}
         >
           {children}
           <div
