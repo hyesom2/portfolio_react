@@ -32,7 +32,7 @@ function Modal() {
                   </p>
                 ))}
               </div>
-              <ul className="text-insta_link fs-14 flex flex-wrap items-center justify-start gap-2">
+              <ul className="text-insta_blue fs-14 flex flex-wrap items-center justify-start gap-2">
                 {post?.skills.map((skill, index) => (
                   <li key={index} className="whitespace-nowrap">
                     #{skill}
