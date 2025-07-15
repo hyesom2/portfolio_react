@@ -1,5 +1,7 @@
+import { useModeStore } from '@/store/useModeStore';
+
 interface ButtonTypes {
-  type?: 'traffic' | 'modify' | 'delete';
+  type?: 'traffic' | 'save' | 'cancel';
   color?: 'red' | 'yellow' | 'green';
   className?: string;
   children?: React.ReactNode;
@@ -13,6 +15,8 @@ const TRAFFIC_COLORS = {
 };
 
 function Button({ type, color, className, children, onClick }: ButtonTypes) {
+  const mode = useModeStore((state) => state.mode);
+
   switch (type) {
     case 'traffic':
       return (
@@ -22,21 +26,21 @@ function Button({ type, color, className, children, onClick }: ButtonTypes) {
           onClick={onClick}
         />
       );
-    case 'modify':
+    case 'save':
       return (
         <button
           type="button"
-          className="bg-mac_light-indigo h-[78px] w-[72px] rounded-l-[10px] rounded-r-[2px] px-4 py-2 text-white"
+          className={`rounded-10 h-12 w-[72px] px-4 py-2 text-white ${mode === 'dark' ? 'bg-mac_dark-blue' : 'bg-mac_light-blue'}`}
           onClick={onClick}
         >
           {children}
         </button>
       );
-    case 'delete':
+    case 'cancel':
       return (
         <button
           type="button"
-          className="bg-mac_light-pink h-[78px] w-[72px] rounded-l-[2px] rounded-r-[10px] px-4 py-2 text-white"
+          className={`rounded-10 h-12 w-[72px] px-4 py-2 text-white ${mode === 'dark' ? 'bg-mac_dark-pink' : 'bg-mac_light-pink'}`}
           onClick={onClick}
         >
           {children}
