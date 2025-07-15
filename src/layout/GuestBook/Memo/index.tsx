@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+import Textarea from '@/components/Textarea';
 import { useAlertStore } from '@/store/useAlertStore';
+import { useModeStore } from '@/store/useModeStore';
 import { insertGuestBook } from '@/supabase/guestbook';
 
 function GuestMemo() {
   const navigate = useNavigate();
+  const mode = useModeStore((state) => state.mode);
   const [imgFile, setImgFile] = useState<File | null>(null);
   const [nickname, setNickname] = useState('');
   const [content, setContent] = useState('');
@@ -66,54 +71,50 @@ function GuestMemo() {
   };
 
   return (
-    <form className="flex h-full flex-1 flex-col overflow-hidden bg-white">
-      <div className="flex">
-        <label htmlFor="">작성자 :</label>
-        <input
-          type="text"
-          placeholder="2~10자의 이름(닉네임)을 입력해 주세요."
-          value={nickname}
-          onChange={handleNickname}
-          minLength={2}
-          maxLength={10}
-        />
-      </div>
-      <div>
-        <label htmlFor="profile_img">프로필에 등록할 이미지를 선택해주세요 :</label>
-        <input
-          type="file"
-          accept=".png, .jpg, .jpeg"
-          id="profile_img"
-          name="profile_img"
-          onChange={handleImageUpload}
-        />
-        {imgFile && (
-          <div className="mt-2">
-            <p>선택된 파일: {imgFile.name}</p>
-          </div>
-        )}
-      </div>
-
-      <textarea
+    <form
+      className={`mx-auto flex h-full w-full max-w-[600px] flex-col justify-center gap-6 ${mode === 'dark' ? 'bg-black' : 'bg-white'}`}
+    >
+      <Input
+        id="author"
+        label="작성자"
+        type="text"
+        placeholder="2 ~ 10자의 이름(닉네임)을 입력해 주세요."
+        min={2}
+        max={10}
+        value={nickname}
+        onChange={handleNickname}
+      />
+      <Input
+        id="profile_img"
+        type="file"
+        label="프로필 이미지"
+        accept=".png, .jpg, .jpeg"
+        onChange={handleImageUpload}
+      />
+      <Textarea
+        id="message"
+        label="내용"
         placeholder="남기고 싶은 말을 자유롭게 적어주세요."
         value={content}
         onChange={handleContent}
       />
-      <input
+      <Input
+        label="비밀번호"
+        id="password"
         type="password"
-        placeholder="2~10자의 비밀번호를 입력해주세요."
+        placeholder="2 ~ 10자의 비밀번호를 입력해 주세요."
+        min={2}
+        max={10}
         value={password}
         onChange={handlePassword}
-        minLength={2}
-        maxLength={10}
       />
-      <div className="flex gap-4">
-        <button type="button" onClick={handleSave}>
+      <div className="flex justify-center gap-1">
+        <Button type="save" onClick={handleSave}>
           저장
-        </button>
-        <button type="button" onClick={handleCancel}>
+        </Button>
+        <Button type="cancel" onClick={handleCancel}>
           취소
-        </button>
+        </Button>
       </div>
     </form>
   );
