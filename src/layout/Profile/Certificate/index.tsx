@@ -4,6 +4,19 @@ import { useModeStore } from '@/store/useModeStore';
 const CERTIFICATE_DATA = [
   {
     id: 0,
+    title: 'GTQ(그래픽기술자격) 1급',
+    content: (
+      <>
+        자격증번호 : GA10120110231054
+        <br />
+        기관 : 한국생산성본부
+        <br />
+        취득일 : 2020.11.13
+      </>
+    ),
+  },
+  {
+    id: 1,
     title: 'SQLD(SQL 개발자)',
     content: (
       <>
@@ -16,7 +29,7 @@ const CERTIFICATE_DATA = [
     ),
   },
   {
-    id: 1,
+    id: 2,
     title: '웹디자인기능사',
     content: (
       <>
