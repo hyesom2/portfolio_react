@@ -34,7 +34,7 @@ function ProfileSidebar() {
 
   return (
     <aside
-      className={`flex h-full w-full max-w-80 flex-col gap-11 border-r pt-11 ${mode === 'dark' ? 'border-r-mac_dark-gray03' : 'border-r-mac_light-gray03'}`}
+      className={`flex h-full w-full flex-col gap-11 pt-11 sm:max-w-full lg:max-w-[320px] lg:border-r ${mode === 'dark' ? 'border-r-mac_dark-gray03' : 'border-r-mac_light-gray03'}`}
     >
       <header className="flex shrink-0 items-center justify-between px-2">
         <h2 className={`fs-34 font-bold ${mode === 'dark' ? 'text-white' : 'text-black'}`}>

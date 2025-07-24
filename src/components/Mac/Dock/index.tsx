@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import useDeviceResize from '@/hooks/useDeviceResize';
 import { useDockStore } from '@/store/useDockStore';
 import { useModeStore } from '@/store/useModeStore';
+import { useResponsiveStore } from '@/store/useResponsiveStore';
 
 const DOCK_DATA = [
   {
@@ -28,16 +30,17 @@ const DOCK_DATA = [
 
 function Dock() {
   const navigate = useNavigate();
-  const { mode } = useModeStore();
+  const mode = useModeStore((state) => state.mode);
   const setActiveApp = useDockStore((state) => state.setActiveApp);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const isTablet = useResponsiveStore((state) => state.isTablet);
 
   const handleAppClick = (title: string) => {
     setActiveApp(title);
 
     if (title === 'instagram') {
       navigate(`/${title}/profile`);
-    } else if (title === 'profile') {
+    } else if (!isTablet && title === 'profile') {
       navigate(`/${title}/info`);
     } else {
       navigate(`/${title}`);
@@ -46,6 +49,8 @@ function Dock() {
   const handleHoverIndex = (index: number | null) => {
     setHoverIndex(index);
   };
+
+  useDeviceResize();
 
   return (
     <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 transform p-2">
