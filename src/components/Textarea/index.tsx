@@ -21,7 +21,7 @@ function Textarea({ id, label, placeholder, value, onChange }: TextareaProps) {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`rounded-6 fs-14 scrollbar-hide placeholder:text-mac_light-font/30 focus:outline-mac_light-blue/50 active:outline-mac_light-blue/50 h-30 w-full resize-none overflow-y-scroll border-0 p-2 focus:outline-4 active:outline-4 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 text-black'}`}
+        className={`rounded-6 fs-14 scrollbar-hide placeholder:text-mac_light-font/30 focus:outline-mac_light-blue/50 active:outline-mac_light-blue/50 h-30 w-full resize-none overflow-y-scroll border-0 p-2 focus:outline-4 active:outline-4 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-white text-black'}`}
       ></textarea>
     </div>
   );

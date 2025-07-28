@@ -6,9 +6,11 @@ import Button from '@/components/Button';
 import GlobalActionSheet from '@/components/GlobalActionSheet';
 import Icons from '@/components/Icons';
 import ChatBubble from '@/components/Mac/ChatBubble';
+import useDeviceResize from '@/hooks/useDeviceResize';
 import { useAlertStore } from '@/store/useAlertStore';
 import { useGuestBookStore } from '@/store/useGuestBookStore';
 import { useModeStore } from '@/store/useModeStore';
+import { useResponsiveStore } from '@/store/useResponsiveStore';
 import { deleteGuestBook, fetchGuestBook, updateGuestBook } from '@/supabase/guestbook';
 
 type GuestBookTypes = {
@@ -30,6 +32,7 @@ function GuestDetail() {
   const id = searchParams.get('id');
 
   const mode = useModeStore((state) => state.mode);
+  const isTablet = useResponsiveStore((state) => state.isTablet);
   const showAlert = useAlertStore((state) => state.showAlert);
   const hideAlert = useAlertStore((state) => state.hideAlert);
 
@@ -130,8 +133,26 @@ function GuestDetail() {
     }
   };
 
+  const handleBackButton = () => {
+    navigate('/guestbook', { replace: true });
+  };
+
+  useDeviceResize();
+
   return (
-    <section className={`relative flex h-full flex-1 flex-col p-4`}>
+    <section
+      className={`scrollbar-hide fixed top-0 right-0 bottom-0 left-0 flex flex-col items-start gap-4 overflow-y-scroll px-6 pt-7 pb-7 lg:relative lg:w-full lg:bg-transparent lg:px-16 lg:py-11 ${mode === 'dark' ? 'bg-black' : 'bg-mac_light-gray06'}`}
+    >
+      {isTablet ? (
+        <button type="button" onClick={handleBackButton} className="pt-4 pl-2">
+          <Icons
+            type="instagram"
+            name="chevron-left"
+            className={`fs-20 font-bold ${mode === 'dark' ? 'text-mac_dark-font/60' : 'text-mac_light-font/60'}`}
+          />
+        </button>
+      ) : null}
+
       {isEdit ? (
         <textarea
           placeholder="내용"
@@ -173,7 +194,6 @@ function GuestDetail() {
           </>
         )}
       </div>
-
       <AnimatePresence>
         {showActionSheet && (
           <GlobalActionSheet onEdit={handleEdit} onDelete={handleDelete} onCancel={handleCancel} />

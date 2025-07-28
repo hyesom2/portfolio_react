@@ -22,7 +22,7 @@ function GuestbookProfile({ id, nickname, profile_img, created_at }: GuestbookPr
 
   return (
     <li
-      className={`fs-14 text-mac_light-font-active ${mode === 'dark' ? 'hover:bg-mac_dark-profileBg' : 'hover:bg-mac_light-gray06'} rounded-10 focus:${mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-mac_light-gray06'} relative flex h-[70px] w-full items-center justify-start gap-2 px-4 hover:cursor-pointer ${isActive ? (mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-mac_light-gray06') : ''} `}
+      className={`fs-14 text-mac_light-font-active ${mode === 'dark' ? 'hover:bg-mac_dark-profileBg' : 'hover:bg-white'} rounded-10 focus:${mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-white'} relative flex h-[70px] w-full items-center justify-start gap-2 px-4 hover:cursor-pointer ${isActive ? (mode === 'dark' ? 'bg-mac_dark-gray06' : 'bg-white') : ''} `}
       onClick={handleProfileClick}
     >
       <figure className="flex w-full gap-3">

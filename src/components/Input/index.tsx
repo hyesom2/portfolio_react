@@ -32,7 +32,7 @@ function Input({ id, label, accept, type, placeholder, min, max, value, onChange
         maxLength={max}
         value={value}
         onChange={onChange}
-        className={`fs-14 rounded-6 placeholder:text-mac_light-font/30 focus:outline-mac_light-blue/50 active:outline-mac_light-blue/50 w-full p-2 focus:outline-4 active:outline-4 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 border-mac_light-border text-black'}`}
+        className={`fs-14 rounded-6 placeholder:text-mac_light-font/30 focus:outline-mac_light-blue/50 active:outline-mac_light-blue/50 w-full p-2 focus:outline-4 active:outline-4 ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'border-mac_light-border bg-white text-black'}`}
       />
     </div>
   );

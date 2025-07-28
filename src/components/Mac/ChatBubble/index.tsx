@@ -28,11 +28,11 @@ function ChatBubble({ type, children }: ChatBubbleProps) {
     return (
       <div className="flex items-end">
         <div
-          className={`fs-17 rounded-14 relative left-3 max-w-[640px] px-3.5 py-2 whitespace-pre-wrap ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-mac_light-gray06 text-black'}`}
+          className={`fs-17 rounded-14 relative left-3 max-w-[640px] px-3.5 py-2 whitespace-pre-wrap ${mode === 'dark' ? 'bg-mac_dark-gray06 text-white' : 'bg-white text-black'}`}
         >
           {children}
           <div
-            className={`absolute -bottom-2 -left-2 h-0 w-0 rotate-45 border-t-[20px] border-r-[20px] border-r-transparent ${mode === 'dark' ? 'border-t-mac_dark-gray06' : 'border-t-mac_light-gray06'}`}
+            className={`absolute -bottom-2 -left-2 h-0 w-0 rotate-45 border-t-[20px] border-r-[20px] border-r-transparent ${mode === 'dark' ? 'border-t-mac_dark-gray06' : 'border-t-white'}`}
           ></div>
         </div>
       </div>
